@@ -1,0 +1,34 @@
+﻿@model List<Travela.WebUI.Dtos.ResultDestinationDto>
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Şehir</th>
+            <th>Ülke</th>
+            <th>Fiyat</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.destinationId</td>
+                <td>@item.city</td>
+                <td>@item.country</td>
+                <td>@item.price ₺</td>
+                <td>@item.date.ToString("dd-MMM-yyyy")</td>
+                <td><a href="/Destination/DeleteDestination/@item.destinationId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Destination/UpdateDestination/@item.destinationId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="#" class="btn btn-info">Yeni Destinasyon</a>
+</div>

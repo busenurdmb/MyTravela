@@ -1,0 +1,37 @@
+﻿@model Travela.WebUI.Dtos.CreateDestinationDto
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+<div class="container">
+    <br /><br />
+    <label>Şehir</label>
+    <input type="text" asp-for="city" class="form-control" />
+    <br />
+    <label>Ülke</label>
+    <input type="text" asp-for="country" class="form-control" />
+    <br />
+    <label>Görsel</label>
+    <input type="text" asp-for="imageUrl" class="form-control" />
+    <br />
+    <label>Gün Sayısı</label>
+    <input type="number" asp-for="countDay" class="form-control" />
+    <br />
+    <label>Alt Başlık</label>
+    <input type="text" asp-for="subTitle" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="description" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="price" class="form-control" />
+    <br />
+    <label>Tarih</label>
+    <input type="date" asp-for="date" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Rotayı Ekle</button>
+    </div>
+</form>
