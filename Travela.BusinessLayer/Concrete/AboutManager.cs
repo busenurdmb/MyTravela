@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyTravela.BusinessLayer.Abstract;
-using MyTravela.DataAccessLayer.Abstract;
-using MyTravela.EntityLayer.Concrete;
+using Travela.EntityLayer.Concrete;
+using Travela.BusinessLayer.Abstract;
+using Travela.DataAccessLayer.Abstract;
 
-namespace MyTravela.BusinessLayer.Concrete
+namespace Travela.BusinessLayer.Concrete
 {
-   public class AboutManager : IAboutService
+    public class AboutManager : IAboutService
     {
         private readonly IAboutDal _AboutDal;
         public AboutManager(IAboutDal AboutDal)

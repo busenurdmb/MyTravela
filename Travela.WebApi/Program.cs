@@ -1,8 +1,11 @@
-using MyTravela.BusinessLayer.Abstract;
-using MyTravela.BusinessLayer.Concrete;
-using MyTravela.DataAccessLayer.Abstract;
-using MyTravela.DataAccessLayer.Context;
-using MyTravela.DataAccessLayer.EntityFramework;
+using Travela.BusinessLayer.Abstract;
+using Travela.BusinessLayer.Concrete;
+using Travela.DataAccessLayer.Abstract;
+using Travela.DataAccessLayer.EntityFramework;
+
+using Travela.DataAccessLayer.Abstract;
+using Travela.DataAccessLayer.Context;
+using Travela.DataAccessLayer.EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,18 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 builder.Services.AddScoped<IDestinationDal, EfDestinationDal>();
 builder.Services.AddScoped<IDestinationService, DestinationManager>();
+
+
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
+
+builder.Services.AddScoped<IAboutFeatureDal, EfAboutFeatureDal>();
+builder.Services.AddScoped< IAboutFeatureService, AboutFeatureManager>();
+
+
+builder.Services.AddScoped<IFeatureDal, EfFeatureDal>();
+builder.Services.AddScoped<IFeatureService, FeatureManager>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyTravela.DataAccessLayer.Abstract;
-using MyTravela.DataAccessLayer.Context;
-using MyTravela.DataAccessLayer.Repositories;
-using MyTravela.EntityLayer.Concrete;
+using Travela.DataAccessLayer.Repositories;
+using Travela.EntityLayer.Concrete;
+using Travela.DataAccessLayer.Abstract;
+using Travela.DataAccessLayer.Context;
 
-namespace MyTravela.DataAccessLayer.EntityFramework
+namespace Travela.DataAccessLayer.EntityFramework
 {
     public class EfCategoryDal : GenericRepository<Category>, ICategoryDal
     {

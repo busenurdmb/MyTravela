@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTravela.DataAccessLayer.Abstract
+namespace Travela.DataAccessLayer.Abstract
 {
     public interface IGenericDal<T> where T : class
     {

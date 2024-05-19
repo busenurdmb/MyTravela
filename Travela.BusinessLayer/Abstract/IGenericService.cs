@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyTravela.BusinessLayer.Abstract
+namespace Travela.BusinessLayer.Abstract
 {
     public interface IGenericService<T> where T : class
     {

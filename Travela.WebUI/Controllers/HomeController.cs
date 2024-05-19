@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using MyTravela.WebUI.Models;
+using Travela.WebUI.Models;
 
-namespace MyTravela.WebUI.Controllers
+namespace Travela.WebUI.Controllers
 {
     public class HomeController : Controller
     {

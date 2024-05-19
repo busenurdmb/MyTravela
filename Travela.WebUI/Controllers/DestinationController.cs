@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
-using MyTravela.WebUI.Dtos;
+using Travela.WebUI.Dtos;
 
-namespace MyTravela.WebUI.Controllers
+namespace Travela.WebUI.Controllers
 {
     public class DestinationController : Controller
     {

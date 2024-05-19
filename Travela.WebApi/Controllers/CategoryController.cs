@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MyTravela.BusinessLayer.Abstract;
-using MyTravela.EntityLayer.Concrete;
+using Travela.BusinessLayer.Abstract;
+using Travela.EntityLayer.Concrete;
 
-namespace MyTravela.WebApi.Controllers
+namespace Travela.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyTravela.EntityLayer.Concrete;
+using Travela.BusinessLayer.Abstract;
+using Travela.EntityLayer.Concrete;
 
-namespace MyTravela.BusinessLayer.Abstract
+namespace Travela.BusinessLayer.Abstract
 {
     public interface IServiceService : IGenericService<Services>
     {

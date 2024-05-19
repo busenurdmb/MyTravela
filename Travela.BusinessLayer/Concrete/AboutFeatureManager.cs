@@ -1,11 +1,11 @@
-﻿using MyTravela.BusinessLayer.Abstract;
-using MyTravela.DataAccessLayer.Abstract;
-using MyTravela.EntityLayer.Concrete;
+﻿using Travela.BusinessLayer.Abstract;
+using Travela.DataAccessLayer.Abstract;
+using Travela.EntityLayer.Concrete;
 
-namespace MyTravela .BusinessLayer.Concrete
+namespace Travela.BusinessLayer.Concrete
 {
-    
-    public class AboutFeatureManager : IAboutFeatureSevice
+
+    public class AboutFeatureManager : IAboutFeatureService
     {
         private readonly IAboutFeatureDal _AboutFeatureDal;
         public AboutFeatureManager(IAboutFeatureDal AboutFeatureDal)

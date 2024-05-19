@@ -1,4 +1,4 @@
-namespace MyTravela.WebUI.Models
+namespace Travela.WebUI.Models
 {
     public class ErrorViewModel
     {

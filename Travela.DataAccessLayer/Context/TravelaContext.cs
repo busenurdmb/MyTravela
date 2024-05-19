@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyTravela.EntityLayer.Concrete;
+using Travela.EntityLayer.Concrete;
 
-namespace MyTravela.DataAccessLayer.Context
+namespace Travela.DataAccessLayer.Context
 {
     public class TravelaContext : DbContext
     {
@@ -18,6 +13,7 @@ namespace MyTravela.DataAccessLayer.Context
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Services> Services { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<AboutFeatures> AboutFeatures { get; set; }
         public DbSet<Feature> Features { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MyTravela.WebUI.Dtos
+﻿namespace Travela.WebUI.Dtos
 {
     public class ResultCategoryDto
     {

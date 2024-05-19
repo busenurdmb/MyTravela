@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyTravela.EntityLayer.Concrete;
+using Travela.EntityLayer.Concrete;
+using Travela.BusinessLayer.Abstract;
 
-namespace MyTravela.BusinessLayer.Abstract
+namespace Travela.BusinessLayer.Abstract
 {
-   public interface IAboutFeatureSevice: IGenericService<AboutFeatures>
+    public interface IAboutFeatureService: IGenericService<AboutFeatures>
     {
     }
 }

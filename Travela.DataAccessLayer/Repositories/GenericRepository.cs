@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyTravela.DataAccessLayer.Abstract;
-using MyTravela.DataAccessLayer.Context;
+using Travela.DataAccessLayer.Abstract;
+using Travela.DataAccessLayer.Context;
 
-namespace MyTravela.DataAccessLayer.Repositories
+namespace Travela.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {

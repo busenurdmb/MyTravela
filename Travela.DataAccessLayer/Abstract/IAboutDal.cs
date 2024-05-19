@@ -1,7 +1,7 @@
-﻿
-using MyTravela.EntityLayer.Concrete;
+﻿using Travela.DataAccessLayer.Abstract;
+using Travela.EntityLayer.Concrete;
 
-namespace MyTravela.DataAccessLayer.Abstract
+namespace Travela.DataAccessLayer.Abstract
 {
     public interface IAboutDal : IGenericDal<About>
     {
