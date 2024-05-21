@@ -15,5 +15,6 @@ namespace Travela.DataAccessLayer.Context
         public DbSet<About> Abouts { get; set; }
         public DbSet<AboutFeatures> AboutFeatures { get; set; }
         public DbSet<Feature> Features { get; set; }
+        public DbSet<Contact> Contact { get; set; }
     }
 }

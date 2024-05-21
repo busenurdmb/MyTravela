@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_UILayoutHeadComponents")
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar Start -->
+    @await Component.InvokeAsync("_UILayoutTopbarComponents")
+
+    <!-- Topbar End -->
+    <!-- Navbar & Hero Start -->
+    @RenderBody()
+    
+
+    <!-- Subscribe Start -->
+    <div class="container-fluid subscribe py-5">
+        <div class="container text-center py-5">
+            <div class="mx-auto text-center" style="max-width: 900px;">
+                <h5 class="subscribe-title px-3">Abone Ol</h5>
+                <h1 class="text-white mb-4">Haberlerimizi Öğren</h1>
+                <p class="text-white mb-5">
+                    Sende abone olarak avantajları turlarımızdan haberdar olup senin için uygun olan avatjlardan yarrlanabilirsin
+                </p>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Abone Ol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe End -->
+    <!-- Footer Start -->
+    @await Component.InvokeAsync("_UlLayoutFooterComponents")
+
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Trevella</a>, Tüm Hakları Saklıdır.
+                </div>
+                <div class="col-md-6 text-center text-md-start">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    Designed By <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/travela-1.0.0/lib/easing/easing.min.js"></script>
+    <script src="~/travela-1.0.0/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/travela-1.0.0/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/travela-1.0.0/lib/lightbox/js/lightbox.min.js"></script>
+
+ 
+    <!-- Template Javascript -->
+    <script src="~/travela-1.0.0/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mevcut URL'yi alın
+            var currentUrl = window.location.pathname;
+
+            // Tüm nav-link öğelerini seçin
+            var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            // Her nav-link öğesini kontrol edin
+            navLinks.forEach(function (link) {
+                if (link.getAttribute('href') === currentUrl) {
+                    // 'active' sınıfını ekleyin
+                    link.classList.add('active');
+                } else {
+                    // Diğer nav-link öğelerinden 'active' sınıfını kaldırın
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

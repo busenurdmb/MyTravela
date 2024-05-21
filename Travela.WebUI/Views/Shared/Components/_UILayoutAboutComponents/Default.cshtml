@@ -1,0 +1,25 @@
+﻿@model List<ResultAboutDto>
+<div class="container-fluid about py-5">
+    <div class="container py-5">
+        @foreach (var item in Model)
+        {
+            
+       
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <div class="h-100" style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
+                    <img src="@item.imageUrl" class="img-fluid w-100 h-100" alt="">
+                </div>
+            </div>
+            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(/travela-1.0.0/img/about-img-1.png);">
+                <h5 class="section-about-title pe-3">Biz Kimiz !!!</h5>
+                <h1 class="mb-4">Hoşgeldiniz <span class="text-primary">@item.title</span></h1>
+                <p class="mb-4">@item.description</p>
+
+                    @await Component.InvokeAsync("_UILayoutAboutFeatureComponents")
+                <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a>
+            </div>
+        </div>
+        }
+    </div>
+</div>

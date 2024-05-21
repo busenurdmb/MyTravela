@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Travela.DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using Travela.DataAccessLayer.Context;
 namespace Travela.DataAccessLayer.Migrations
 {
     [DbContext(typeof(TravelaContext))]
-    partial class TravelaContextModelSnapshot : ModelSnapshot
+    [Migration("20240521083644_mig4")]
+    partial class mig4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

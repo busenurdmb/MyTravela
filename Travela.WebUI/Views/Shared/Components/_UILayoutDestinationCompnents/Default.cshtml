@@ -1,0 +1,57 @@
+﻿@model List<ResultDestinationDto>
+
+
+
+<div class="container-fluid packages py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Paketler</h5>
+            <h1 class="mb-0">Harika Paketler</h1>
+        </div>
+        
+            <div class="row g-4">
+                @foreach (var item in Model)
+                {
+                 
+                    <div class="col-md-4">
+                        <div class="packages-item">
+                            <div class="packages-img">
+                            <img src="@item.imageUrl" class="img-fluid rounded-top" style="width: 500px; height: 350px;" alt="Image">
+
+
+                                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>@item.country-@item.city</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>@item.countDay gün</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 kişi</small>
+                                </div>
+                                <div class="packages-price py-2 px-4">$@item.price</div>
+                            </div>
+                            <div class="packages-content bg-light">
+                                <div class="p-4 pb-0">
+                                    <h5 class="mb-0">@item.subTitle</h5>
+                                    <small class="text-uppercase">Otel Detayları</small>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                    <p class="mb-4">@item.description</p>
+                                </div>
+                                <div class="row bg-primary rounded-bottom mx-0">
+                                    <div class="col-6 text-start px-0">
+                                        <a href="#" class="btn-hover btn text-white py-2 px-4">Daha Fazla Oku</a>
+                                    </div>
+                                    <div class="col-6 text-end px-0">
+                                        <a href="#" class="btn-hover btn text-white py-2 px-4">Şimdi Rezervasyon Yap</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+       
+    </div>
+</div>

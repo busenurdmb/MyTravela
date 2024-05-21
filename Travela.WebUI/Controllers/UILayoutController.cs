@@ -2,7 +2,7 @@
 
 namespace Travela.WebUI.Controllers
 {
-    public class DestinationController : Controller
+    public class UILayoutController : Controller
     {
         public IActionResult Index()
         {

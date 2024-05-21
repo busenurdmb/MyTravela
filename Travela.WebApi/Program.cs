@@ -3,9 +3,8 @@ using Travela.BusinessLayer.Concrete;
 using Travela.DataAccessLayer.Abstract;
 using Travela.DataAccessLayer.EntityFramework;
 
-using Travela.DataAccessLayer.Abstract;
 using Travela.DataAccessLayer.Context;
-using Travela.DataAccessLayer.EntityFramework;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +29,12 @@ builder.Services.AddScoped< IAboutFeatureService, AboutFeatureManager>();
 
 builder.Services.AddScoped<IFeatureDal, EfFeatureDal>();
 builder.Services.AddScoped<IFeatureService, FeatureManager>();
+
+builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+builder.Services.AddScoped<IContactService,ContactManager>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

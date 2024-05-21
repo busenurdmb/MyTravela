@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Travela.BusinessLayer.Abstract;
 using Travela.EntityLayer.Concrete;
 
 namespace Travela.WebApi.Controllers
 {
-    public class ServiceController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ServiceController : ControllerBase
     {
         private readonly IServiceService _ServiceService;
 
