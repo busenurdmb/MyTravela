@@ -49,5 +49,11 @@ namespace Travela.WebApi.Controllers
         {
             return Ok(_ServiceService.TGetById(id));
         }
+
+        [HttpGet("ServiceCount")]
+        public IActionResult ServiceCount()
+        {
+            return Ok(_ServiceService.TGetServiceCount());
+        }
     }
 }

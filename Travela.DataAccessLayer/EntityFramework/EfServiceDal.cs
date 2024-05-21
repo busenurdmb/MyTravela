@@ -15,5 +15,12 @@ namespace Travela.DataAccessLayer.EntityFramework
         public EfServiceDal(TravelaContext context) : base(context)
         {
         }
+
+        public int GetServiceCount()
+        {
+            var context = new TravelaContext();
+            var value = context.Services.Count();
+            return value;
+        }
     }
 }

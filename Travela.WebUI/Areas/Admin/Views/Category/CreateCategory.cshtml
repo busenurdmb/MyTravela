@@ -1,13 +1,31 @@
 ﻿@model CreateCategoryDto
 
 @{
-    Layout = null;
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Kategoriler</h2>
+                </div>
+            </div>
+        </div>
 
 
-<div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Kategori Ekleme Sayfası</h6>
+                    </div>
+
+
+             <div class="container">
     <br /><br />
     <form method="post">
         <label>Kategori Adı</label>
@@ -16,6 +34,13 @@
         <label>Kategori Görseli</label>
         <input type="text" asp-for="imageUrl" class="form-control" />
         <br />
-        <button class="btn btn-primary">Kategoriyi Kaydet</button>
+       
     </form>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-primary">Kategoriyi Kaydet</button>
+            </div>
+        </div>
     </div>
+</div>

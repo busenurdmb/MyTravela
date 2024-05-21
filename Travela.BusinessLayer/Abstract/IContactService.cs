@@ -9,5 +9,6 @@ namespace Travela.BusinessLayer.Abstract
 {
     public interface IContactService : IGenericService<Contact>
     {
+        public int TGetContactCount();
     }
 }

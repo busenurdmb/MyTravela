@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Travela.EntityLayer.Concrete;
 
 namespace Travela.DataAccessLayer.Context
 {
-    public class TravelaContext : DbContext
+    public class TravelaContext : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,5 +17,6 @@ namespace Travela.DataAccessLayer.Context
         public DbSet<AboutFeatures> AboutFeatures { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Contact> Contact { get; set; }
+        public DbSet<Galery> Galeries { get; set; }
     }
 }

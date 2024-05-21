@@ -1,38 +1,70 @@
 ﻿@model Travela.WebUI.Dtos.UpdateDestinationDto
 
 @{
-    Layout = null;
+    ViewData["Title"] = "UpdateDestination";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<form method="post">
-    <div class="container">
-        <br /><br />
-        <input type="hidden" asp-for="destinationId" />
-        <label>Şehir</label>
-        <input type="text" asp-for="city" class="form-control" />
-        <br />
-        <label>Ülke</label>
-        <input type="text" asp-for="country" class="form-control" />
-        <br />
-        <label>Görsel</label>
-        <input type="text" asp-for="imageUrl" class="form-control" />
-        <br />
-        <label>Gün Sayısı</label>
-        <input type="number" asp-for="countDay" class="form-control" />
-        <br />
-        <label>Alt Başlık</label>
-        <input type="text" asp-for="subTitle" class="form-control" />
-        <br />
-        <label>Açıklama</label>
-        <input type="text" asp-for="description" class="form-control" />
-        <br />
-        <label>Fiyat</label>
-        <input type="text" asp-for="price" class="form-control" />
-        <br />
-        <label>Tarih</label>
-        <input type="date" asp-for="date" class="form-control" />
-        <br />
-        <button class="btn btn-success">Rotayı Güncelle</button>
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Rota</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Rota Ekleme Sayfası</h6>
+                    </div>
+
+
+                    <div class="container">
+                        
+                        <form method="post">
+                            <div class="container">
+                                <br /><br />
+                                <input type="hidden" asp-for="destinationId" />
+                                <label>Şehir</label>
+                                <input type="text" asp-for="city" class="form-control" />
+                                <br />
+                                <label>Ülke</label>
+                                <input type="text" asp-for="country" class="form-control" />
+                                <br />
+                                <label>Görsel</label>
+                                <input type="text" asp-for="imageUrl" class="form-control" />
+                                <br />
+                                <label>Gün Sayısı</label>
+                                <input type="number" asp-for="countDay" class="form-control" />
+                                <br />
+                                <label>Alt Başlık</label>
+                                <input type="text" asp-for="subTitle" class="form-control" />
+                                <br />
+                                <label>Açıklama</label>
+                                <input type="text" asp-for="description" class="form-control" />
+                                <br />
+                                <label>Fiyat</label>
+                                <input type="text" asp-for="price" class="form-control" />
+                                <br />
+                                <label>Tarih</label>
+                                <input type="date" asp-for="date" class="form-control" />
+                                <br />
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-success">Rotayı Güncelle</button>
+            </div>
+        </div>
     </div>
-</form>
+</div>

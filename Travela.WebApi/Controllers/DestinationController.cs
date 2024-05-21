@@ -48,5 +48,16 @@ namespace Travela.WebApi.Controllers
         {
             return Ok(_destinationService.TGetById(id));
         }
+
+        [HttpGet("DestinationCount")]
+        public IActionResult DestinationCount()
+        {
+            return Ok(_destinationService.TGetDestinationCount());
+        }
+        [HttpGet("DestinationChart")]
+        public IActionResult DestinationChart()
+        {
+            return Ok(_destinationService.TGetChart());
+        }
     }
 }

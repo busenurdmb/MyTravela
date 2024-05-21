@@ -9,5 +9,7 @@ namespace Travela.DataAccessLayer.Abstract
 {
     public interface IDestinationDal : IGenericDal<Destination>
     {
+        List<object> GetChart();
+        int GetDestinationCount();
     }
 }

@@ -24,6 +24,12 @@ namespace Travela.BusinessLayer.Concrete
         {
             return _ServicesDal.GetListAll();
         }
+
+        public int TGetServiceCount()
+        {
+           return _ServicesDal.GetServiceCount();
+        }
+
         public void TInsert(Services entity)
         {
             _ServicesDal.Insert(entity);

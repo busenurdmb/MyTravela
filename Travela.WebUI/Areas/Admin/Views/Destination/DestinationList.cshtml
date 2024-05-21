@@ -1,34 +1,96 @@
-﻿@model List<Travela.WebUI.Dtos.ResultDestinationDto>
+﻿@model List<ResultDestinationDto>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "DestinationList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<div class="container">
-    <br /><br />
-    <table class="table table-hover">
-        <tr>
-            <th>#</th>
-            <th>Şehir</th>
-            <th>Ülke</th>
-            <th>Fiyat</th>
-            <th>Tarih</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-        </tr>
-        @foreach(var item in Model)
-        {
-            <tr>
-                <td>@item.destinationId</td>
-                <td>@item.city</td>
-                <td>@item.country</td>
-                <td>@item.price ₺</td>
-                <td>@item.date.ToString("dd-MMM-yyyy")</td>
-                <td><a href="/Destination/DeleteDestination/@item.destinationId" class="btn btn-danger">Sil</a></td>
-                <td><a href="/Destination/UpdateDestination/@item.destinationId" class="btn btn-success">Güncelle</a></td>
-            </tr>
-        }
-    </table>
-    <a href="#" class="btn btn-info">Yeni Destinasyon</a>
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Rota</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Rota Tablosu</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Şehir</th>
+                                    <th>Ülke</th>
+                                    <th>Fiyat</th>
+                                    <th>Tarih</th>
+                                    <th>Resim</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.destinationId</td>
+                                        <td>@item.city</td>
+                                        <td>@item.country</td>
+                                        <td>@item.price ₺</td>
+                                        <td>@item.date.ToString("dd-MMM-yyyy")</td>
+                                        <td>
+                                            <img style="width: 250px; height: 150px;" src="@item.imageUrl" alt="@item.imageUrl" class="img-thumbnail">
+                                        </td>
+
+
+                                        <td>
+                                            <a href="/Admin/Destination/Delete/@item.destinationId" class="btn btn-danger">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                                <span class="text">Sil </span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+
+                                            <a href="/Admin/Destination/UpdateDestination/@item.destinationId" class="btn btn-success ">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-edit"></i>
+                                                </span>
+                                                <span class="text">Düzenle</span>
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+                <a href="/Admin/Category/CreateCategory" class="btn btn-primary">
+                    <span class="icon text-white-50">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                    <span class="text">Yeni Rota Girişi</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

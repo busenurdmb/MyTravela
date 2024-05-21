@@ -10,5 +10,6 @@ namespace Travela.DataAccessLayer.Abstract
 {
     public interface IServiceDal : IGenericDal<Services>
     {
+        int GetServiceCount();
     }
 }

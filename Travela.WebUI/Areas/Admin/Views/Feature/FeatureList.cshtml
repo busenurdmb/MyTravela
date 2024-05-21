@@ -1,0 +1,101 @@
+﻿@model List<ResultFeaturesDto>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+
+
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Özellikler</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Özellikler Tablosu</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Başlık1</th>
+                                    <th>Başlık2</th>
+                                    <th>Açıklama</th>
+                                    <th>Görsel</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.featureId</td>
+                                        <td>@item.title1</td>
+                                        <td>@item.title2</td>
+                                        <td>@item.description</td>
+                                        <td>
+                                            <img style="width: 250px; height: 150px;" src="@item.imageUrl" alt="@item.imageUrl" class="img-thumbnail">
+                                        </td>
+
+
+                                        <td>
+                                            <a href="/Admin/Feature/Delete/@item.featureId" class="btn btn-danger">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                                <span class="text">Sil </span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+
+                                            <a href="/Admin/Feature/UpdateFeature/@item.featureId" class="btn btn-success ">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-edit"></i>
+                                                </span>
+                                                <span class="text">Düzenle</span>
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <a href="/Admin/Feature/CreateFeature" class="btn btn-primary">
+                <span class="icon text-white-50">
+                    <i class="fa fa-plus"></i>
+                </span>
+                <span class="text">Yeni Özellik Girişi</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+

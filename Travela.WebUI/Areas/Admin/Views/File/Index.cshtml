@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Dosya Yükleme</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Dosya Yükle</h6>
+                    </div>
+
+                    <h2>Dosya Yükleme Formu</h2>
+                    <br /> <br />
+                    <form id="fileUploadForm" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" name="file"  class="form-control">
+                        <button class="btn btn-success" type="submit">Dosya Yükle</button>
+                    </form>
+                </div>
+
+            </div>
+       
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    document.getElementById('fileUploadForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var formData = new FormData();
+        var fileInput = document.getElementById('fileInput');
+        formData.append('file', fileInput.files[0]);
+
+        fetch('https://localhost:7221/api/File/upload1', {
+            method: 'POST',
+           body: formData,
+            
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Dosya yükleme işlemi başarısız: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // SweetAlert2 ile başarılı iletişim kutusu göster
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Dosya yüklendi:!',
+                    text: 'Dosya yüklendi: ' + data.filePath
+                });
+              
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Dsoya Yükenemedi!',
+                    text: 'Tekrar Deneyiniz.'
+                });
+            });
+    });
+    </script>
+
+

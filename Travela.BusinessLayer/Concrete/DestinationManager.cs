@@ -24,6 +24,17 @@ namespace Travela.BusinessLayer.Concrete
         {
             return _destinationDal.GetById(id);
         }
+
+        public List<object> TGetChart()
+        {
+            return _destinationDal.GetChart();
+        }
+
+        public int TGetDestinationCount()
+        {
+            return _destinationDal.GetDestinationCount();
+        }
+
         public List<Destination> TGetListAll()
         {
            return _destinationDal.GetListAll(); 

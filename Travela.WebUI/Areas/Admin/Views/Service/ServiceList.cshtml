@@ -1,0 +1,100 @@
+﻿@model List<ResultServicesDto>
+@{
+    ViewData["Title"] = "ServiceList";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Hizmetler</h2>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-light alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">Uyarıyı kapat</span>
+            </button>
+            <h6><i class="fas fa-exclamation-triangle"></i><b> Bilgi!</b></h6>
+            Tema bütünlüğünün bozulmaması için 4 veriden başka veri girmeyiniz
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <!-- Simple Tables -->
+                <div class="card">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary"> Hizmetler Tablosu</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Başlık</th>
+                                    <th>Açıklama</th>
+                                    <th>Görsel</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.servicesId</td>
+                                        <td>@item.title</td>
+                                        <td>@item.description</td>
+                                        <td>
+                                            <div class="service-icon p-4">
+                                                <i class="@item.iconUrl"></i>
+                                            </div>
+                                        </td>
+
+
+                                        <td>
+                                            <a href="/Admin/Service/Delete/@item.servicesId" class="btn btn-danger">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                                <span class="text">Sil </span>
+                                            </a>
+                                        </td>
+
+                                        <td>
+
+                                            <a href="/Admin/Service/UpdateService/@item.servicesId" class="btn btn-success ">
+                                                <span class="icon text-white-50">
+                                                    <i class="fa fa-edit"></i>
+                                                </span>
+                                                <span class="text">Düzenle</span>
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <a href="/Admin/Service/CreateService" class="btn btn-primary">
+                <span class="icon text-white-50">
+                    <i class="fa fa-plus"></i>
+                </span>
+                <span class="text">Yeni Hizmet Girişi</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+

@@ -11,5 +11,12 @@ namespace Travela.DataAccessLayer.EntityFramework
         public EfContactDal(TravelaContext context) : base(context)
         {
         }
+
+        public int GetContactCount()
+        {
+            var context = new TravelaContext();
+            var value = context.Contact.Count();
+            return value;
+        }
     }
 }

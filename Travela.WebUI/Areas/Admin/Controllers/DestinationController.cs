@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using Travela.WebUI.Dtos;
 
 namespace Travela.WebUI.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     [Route("/Admin/Destination")]
     public class DestinationController : Controller
@@ -49,7 +51,7 @@ namespace Travela.WebUI.Areas.Admin.Controllers
             }
             return View();
         }
-        [Route("DeleteDestination")]
+        [Route("DeleteDestination/{id}")]
         public async Task<IActionResult> DeleteDestination(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -58,7 +60,7 @@ namespace Travela.WebUI.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Route("UpdateDestination")]
+        [Route("UpdateDestination/{id}")]
         public async Task<IActionResult> UpdateDestination(int id)
         {
             var client = _httpClientFactory.CreateClient();
@@ -69,7 +71,7 @@ namespace Travela.WebUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [Route("UpdateDestination")]
+        [Route("UpdateDestination/{id}")]
         public async Task<IActionResult> UpdateDestination(UpdateDestinationDto updateDestinationDto)
         {
             var client = _httpClientFactory.CreateClient();

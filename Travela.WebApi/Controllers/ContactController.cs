@@ -48,5 +48,11 @@ namespace Travela.WebApi.Controllers
         {
             return Ok(_ContactService.TGetById(id));
         }
+
+        [HttpGet("ContactCount")]
+        public IActionResult ContactCount()
+        {
+            return Ok(_ContactService.TGetContactCount());
+        }
     }
 }

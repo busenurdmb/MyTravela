@@ -24,6 +24,12 @@ namespace Travela.BusinessLayer.Concrete
         {
             return _ContactDal.GetById(id);
         }
+
+        public int TGetContactCount()
+        {
+           return _ContactDal.GetContactCount();
+        }
+
         public List<Contact> TGetListAll()
         {
             return _ContactDal.GetListAll();

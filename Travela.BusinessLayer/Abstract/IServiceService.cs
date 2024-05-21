@@ -10,5 +10,6 @@ namespace Travela.BusinessLayer.Abstract
 {
     public interface IServiceService : IGenericService<Services>
     {
+        public int TGetServiceCount();
     }
 }

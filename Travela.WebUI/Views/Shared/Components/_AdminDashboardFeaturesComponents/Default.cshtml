@@ -1,0 +1,44 @@
+﻿@model List<ResultFeaturesDto>
+@{
+    int counter = 0;
+}
+
+
+
+<div class="dark_bg full margin_bottom_30">
+    <div class="full graph_head">
+        <div class="heading1 margin_0">
+            <h2>Slider</h2>
+        </div>
+    </div>
+    <div class="full graph_revenue">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content testimonial">
+                    <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            @foreach (var item in Model)
+                            {
+                                counter++;
+                                <div class="item carousel-item @(counter == 2 ? "active" : "")">
+                                    <div class="img-box" style="width: 250px; height: 150px;"><img src="@item.imageUrl" alt=""></div>
+                                    <p class="testimonial">@item.description</p>
+                                    <p class="overview"><b>@item.title1</b>@item.title2</p>
+                                </div>
+                            }
+                            
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#testimonial_slider" data-slide="geri">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#testimonial_slider" data-slide="ileri">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

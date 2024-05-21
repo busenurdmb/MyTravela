@@ -1,0 +1,143 @@
+﻿@model List<DestinationChartView>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+@{
+    var chartDataJson = ViewBag.ChartData;
+}
+<div class="main-panel">
+    <div class="content-wrapper pb-0">
+        <div class="page-header flex-wrap">
+            <h3 class="mb-0">
+                Admin Paneli  <span class="pl-0 h6 pl-sm-2 text-muted d-inline-block"></span>
+            </h3>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12   grid-margin">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-12 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                        <div class="card bg-warning">
+                            <div class="card-body px-3 py-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="color-card">
+                                        <p class="mb-0 color-card-head">Kategoriler</p>
+                                        <h2 class="text-white">
+                                            @ViewBag.category<span class="h5">tane</span>
+                                        </h2>
+                                    </div>
+                                    <i class="card-icon-indicator mdi mdi-format-list-bulleted bg-inverse-icon-warning"></i>
+                                </div>
+                                <h6 class="text-white">Tur Sayısı</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-12 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                        <div class="card bg-danger">
+                            <div class="card-body px-3 py-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="color-card">
+                                        <p class="mb-0 color-card-head">İletişim</p>
+                                        <h2 class="text-white">
+                                            @ViewBag.contact<span class="h5">adet</span>
+                                        </h2>
+                                    </div>
+                                    <i class="card-icon-indicator mdi mdi-message-plus bg-inverse-icon-danger"></i>
+                                </div>
+                                <h6 class="text-white">Gelen Mesajlar</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-12 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3 py-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="color-card">
+                                        <p class="mb-0 color-card-head">Rotalar</p>
+                                        <h2 class="text-white">
+                                            @ViewBag.Destination<span class="h5">adet</span>
+                                        </h2>
+                                    </div>
+                                    <i class="card-icon-indicator mdi mdi-message-draw bg-inverse-icon-primary"></i>
+                                </div>
+                                <h6 class="text-white">Rota Sayısı</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-12 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                        <div class="card bg-success">
+                            <div class="card-body px-3 py-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="color-card">
+                                        <p class="mb-0 color-card-head">Hizmetler</p>
+                                        <h2 class="text-white"> @ViewBag.Service <span class="h5">adet</span></h2>
+                                    </div>
+                                    <i class="card-icon-indicator mdi mdi-comment-multiple-outline bg-inverse-icon-success"></i>
+                                </div>
+                                <h6 class="text-white">Toplam Hizmet</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-6 stretch-card grid-margin">
+
+                @await Component.InvokeAsync("_AdminDashboardFeaturesComponents")
+                
+
+
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+
+                <div id="bar_chart" style="height: 500px; display: block; width: 514px;" width="642" height="321"></div>
+
+
+            </div>
+            @*  <div class="col-xl-6 stretch-card grid-margin">
+            <div id="chart_div"></div>
+            </div> *@
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+
+            <div id="barchart" style="height: 500px; display: block; width: 514px;" width="642" height="321"></div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Category');
+        data.addColumn('number', 'Destination Count');
+
+        // C# tarafından oluşturulan JSON verilerini kullan
+        var jsonData = @Html.Raw(chartDataJson);
+
+        // JSON verilerini Google Charts DataTable formatına dönüştürme
+        jsonData.forEach(function (item) {
+            data.addRow([item.categoryName, item.destinationCount]);
+        });
+
+        var options = {
+            title: 'Kategorilere Göre Blog Sayıları',
+            legend: { position: 'none' }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart'));
+        chart.draw(data, options);
+    }
+</script> 
+
